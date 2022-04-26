@@ -1,0 +1,18 @@
+server:
+  port: 8081
+
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          #URL donde se conecta los proyectos
+          uri: https://github.com/AlejandroRodrigezBravo/bootcampsNtt.git
+          #Carpeta donde se aloja los archivos
+          searchPaths: config-data
+  security:
+    user:
+      name: root
+      password: admin
+
+

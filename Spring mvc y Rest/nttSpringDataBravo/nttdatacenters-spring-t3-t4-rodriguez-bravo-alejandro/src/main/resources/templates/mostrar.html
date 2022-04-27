@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+<meta charset="ISO-8859-1">
+<title>Taller 3</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<div class="container py-4">
+		<h1>Taller 3 con Cristóbal</h1>
+		<table class="table">
+			<thead class="thead-dark">
+				<tr>
+					<th scope="col">Cliente</th>
+				</tr>
+			</thead>
+			<tbody>
+				<th:block th:each="cliente : ${cl}">
+					<tr>
+						<td scope="row" th:text="${cliente.name}"></td>
+					</tr>
+				</th:block>
+			</tbody>
+		</table>
+		<!-- 
+		<form action="eliminarCliente" method="post">
+		
+		<button type="submit" name="btnCreateCar"
+			class="btn btn-success">Crear</button>
+		 <button type="submit" name="btnEliminar" class="btn btn-danger">Eliminar</button></form>
+		-->
+		
+	</div>
+</body>
+</html>

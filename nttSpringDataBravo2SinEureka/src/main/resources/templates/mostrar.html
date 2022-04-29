@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+<meta charset="ISO-8859-1">
+<title>Taller 3</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<div class="container py-4">
+		<h1>Taller 3 con Cristóbal</h1>
+		<table class="table">
+			<thead class="thead-dark">
+				<tr>
+					<th scope="row">Cliente <small><a
+							class="btn btn-primary btn-sm" th:href="@{/form}"
+							th:text="'Crear Cliente'"></a></small></th>
+					<th scope="row" th:text="${cliente.id}">id</th>
+					<th scope="row" th:text="${cliente.name}">Nombre</th>
+					<th scope="row" th:text="${cliente.lastName}">Apellido</th>
+					<th scope="row" th:text="${cliente.dni}">DNI</th>
+				</tr>
+			</thead>
+			<tbody>
+				<th:block th:each="cliente : ${listaCliente}">
+					<tr>
+						<td scope="row" th:text="${cliente.id}"></td>
+						<td scope="row" th:text="${cliente.name}"></td>
+						<td scope="row" th:text="${cliente.lastName}">
+						<td scope="row" th:text="${cliente.dni}"></td>
+						<td><a class="btn btn-success btn-sm"
+							th:href="@{/edit/} + ${cliente.id}" th:text="'editar'"></a></td>
+						<td>
+						<td><a class="btn btn-danger btn-sm"
+							th:href="@{/eliminar/} + ${cliente.id}" th:text="'eliminar'"
+							onclick="return confirm(document.getElementById('i18n_eliminar_cliente').innerHTML);"></a></td>
+						<td>
+					</tr>
+
+				</th:block>
+			</tbody>
+		</table>
+		<!-- 
+		
+		-->
+
+	</div>
+</body>
+</html>
